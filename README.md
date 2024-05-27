@@ -25,6 +25,26 @@ This project is licensed under the GNU AGPLv3 License. See the [LICENSE](LICENSE
     pip install -r requirements.txt
     ```
 
+## Configuration
+
+Ensure the `config.properties` file contains the necessary configuration details:
+
+```properties
+BASE_API_URL=https://api.moneyfarm.com/v1/
+AUTH0_DOMAIN=auth.moneyfarm.com
+AUTH0_CLIENT_ID=Bzfppcs0zNZNOBoB0yq2uTwM5IyjwpGH
+
+## Retrieving the Moneyfarm's web app `AUTH0_CLIENT_ID`
+
+To retrieve the `AUTH0_CLIENT_ID` from the Moneyfarm web application:
+
+1. Visit the [Moneyfarm login page](https://app.moneyfarm.com/it/sign-in).
+2. Open the developer tools in your browser (F12 or right-click and select "Inspect").
+3. Go to the "Network" tab and log in with your credentials.
+4. Look for network requests related to authentication and inspect them.
+5. The `AUTH0_CLIENT_ID` will be present in the request details.
+
+
 ## Usage
 
 1. Run the script:
@@ -37,16 +57,6 @@ This project is licensed under the GNU AGPLv3 License. See the [LICENSE](LICENSE
 3. Choose whether to export the data to an Excel file (default is Yes).
 
 The script will authenticate with the Moneyfarm API, retrieve your portfolio data, display it in the console, and optionally export it to an Excel file.
-
-## Retrieving the Moneyfarm's web app `AUTH0_CLIENT_ID`
-
-To retrieve the `AUTH0_CLIENT_ID` from the Moneyfarm web application:
-
-1. Visit the [Moneyfarm login page](https://app.moneyfarm.com/it/sign-in).
-2. Open the developer tools in your browser (F12 or right-click and select "Inspect").
-3. Go to the "Network" tab and log in with your credentials.
-4. Look for network requests related to authentication and inspect them.
-5. The `AUTH0_CLIENT_ID` will be present in the request details.
 
 ## Disclaimer
 

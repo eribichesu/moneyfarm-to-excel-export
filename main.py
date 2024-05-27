@@ -2,11 +2,15 @@ import requests
 import pandas as pd
 from datetime import datetime
 import getpass
+import configparser
 
-# Constants
-BASE_API_URL = 'https://api.moneyfarm.com/v1/'
-AUTH0_DOMAIN = 'auth.moneyfarm.com'
-AUTH0_CLIENT_ID = 'Bzfppcs0zNZNOBoB0yq2uTwM5IyjwpGH'
+# Load configuration
+config = configparser.ConfigParser()
+config.read('config.properties')
+
+BASE_API_URL = config['DEFAULT']['BASE_API_URL']
+AUTH0_DOMAIN = config['DEFAULT']['AUTH0_DOMAIN']
+AUTH0_CLIENT_ID = config['DEFAULT']['AUTH0_CLIENT_ID']
 
 def get_auth0_token(username, password):
     url = f'https://{AUTH0_DOMAIN}/oauth/token'
