@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 import getpass
 import configparser
+import os
 
 # Load configuration
 config = configparser.ConfigParser()
@@ -107,8 +108,9 @@ def display_table(data, portfolio_name):
         return []
 
 def export_to_excel(data):
+    os.makedirs('export', exist_ok=True)
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    filename = f"mfm_export_{timestamp}.xlsx"
+    filename = f"export/mfm_export_{timestamp}.xlsx"
     df = pd.DataFrame(data)
     df.to_excel(filename, index=False)
     print(f"Data exported to {filename}")
