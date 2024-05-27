@@ -33,7 +33,8 @@ Ensure the `config.properties` file contains the necessary configuration details
 BASE_API_URL=https://api.moneyfarm.com/v1/
 AUTH0_DOMAIN=auth.moneyfarm.com
 AUTH0_CLIENT_ID=Bzfppcs0zNZNOBoB0yq2uTwM5IyjwpGH
-
+ ```
+ 
 ## Retrieving the Moneyfarm's web app `AUTH0_CLIENT_ID`
 
 To retrieve the `AUTH0_CLIENT_ID` from the Moneyfarm web application:
