@@ -64,7 +64,7 @@ To retrieve the `AUTH0_CLIENT_ID` from the Moneyfarm web application:
 
 1. Run the script:
     ```bash
-    python consume_api.py
+    python main.py
     ```
 
 2. Enter your Moneyfarm username and password when prompted.
