@@ -1,6 +1,14 @@
 # Moneyfarm to Excel Export
 
-Moneyfarm to Excel Export is a Python project that authenticates with the Moneyfarm API to retrieve portfolio data and export it to an Excel file. The project prompts the user for their Moneyfarm credentials and allows them to choose whether to export the data.
+Moneyfarm to Excel Export is a simple Python script that leverages on Moneyfarm's internal API to retrieve portfolio data and export it to an Excel file. This helps Moneyfarm customers to easily export each item of their portfolio and upload it into other management platorms allowing them to consolidate their financial plan and compare performances.
+
+## Esport example
+
+| Portfolio Name | ISIN           | Description                                                               | Load Price | Number of Units |
+|----------------|----------------|---------------------------------------------------------------------------|------------|-----------------|
+| Principale     | IE00B4613386   | Bond Governativi Emergenti in Valuta Locale                               | 57,90792   | 21              |
+| Principale     | IE00BDZVH966   | Bond Governativi USA Indicizzati all'inflazione con Copertura Valutaria   | 5,13716    | 216             |
+| Principale     | IE00B579F325   | Oro Fisico (Invesco)                                                      | 152,99223  | 3               |
 
 ## License
 
