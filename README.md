@@ -27,13 +27,19 @@ This project is licensed under the GNU AGPLv3 License. See the [LICENSE](LICENSE
 
 ## Configuration
 
-Ensure the `config.properties` file contains the necessary configuration details:
+1. Copy `config.properties.example` to `config.properties`:
+    ```bash
+    cp config.properties.example config.properties
+    ```
 
-```properties
-BASE_API_URL=https://api.moneyfarm.com/v1/
-AUTH0_DOMAIN=auth.moneyfarm.com
-AUTH0_CLIENT_ID=Bzfppcs0zNZNOBoB0yq2uTwM5IyjwpGH
- ```
+2. Update `config.properties` with your actual configuration details:
+
+    ```properties
+    [DEFAULT]
+    BASE_API_URL=https://api.moneyfarm.com/v1/
+    AUTH0_DOMAIN=auth.moneyfarm.com
+    AUTH0_CLIENT_ID=your_actual_auth0_client_id
+    ```
  
 ## Retrieving the Moneyfarm's web app `AUTH0_CLIENT_ID`
 
