@@ -9,10 +9,22 @@ import os
 config = configparser.ConfigParser()
 config.read('config.properties')
 
-BASE_API_URL = config['DEFAULT']['BASE_API_URL']
-AUTH0_DOMAIN = config['DEFAULT']['AUTH0_DOMAIN']
-AUTH0_CLIENT_ID = config['DEFAULT']['AUTH0_CLIENT_ID']
+def get_config_param(section, param, default=None):
+    try:
+        return config[section][param]
+    except KeyError:
+        if default is not None:
+            print(f"Warning: '{param}' not found in section '{section}'. Using default value '{default}'.")
+            return default
+        else:
+            print(f"Error: '{param}' not found in section '{section}', and no default value provided.")
+            return None
 
+BASE_API_URL = get_config_param('DEFAULT', 'BASE_API_URL', 'https://api.moneyfarm.com/v1/')
+AUTH0_DOMAIN = get_config_param('DEFAULT', 'AUTH0_DOMAIN', 'auth.moneyfarm.com')
+AUTH0_CLIENT_ID = get_config_param('DEFAULT', 'AUTH0_CLIENT_ID')
+DEFAULT_USERNAME = get_config_param('DEFAULT', 'DEFAULT_USERNAME')
+DEFAULT_PASSWORD = get_config_param('DEFAULT', 'DEFAULT_PASSWORD')
 
 def get_auth0_token(username, password):
     url = f'https://{AUTH0_DOMAIN}/oauth/token'
@@ -121,8 +133,8 @@ def export_to_excel(data):
     print(f"Data exported to {filename}")
 
 # Get user credentials and export preference
-username = input("Enter your username: ")
-password = getpass.getpass("Enter your password: ")
+username = input("Enter your username: ") or DEFAULT_USERNAME
+password = getpass.getpass("Enter your password: ") or DEFAULT_PASSWORD
 export_preference = input("Do you want to export the result to an Excel file? (Yes/No) [Yes]: ") or "Yes"
 EXCEL_EXPORT = export_preference.lower() in ["yes", "y"]
 
