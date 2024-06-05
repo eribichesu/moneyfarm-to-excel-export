@@ -13,9 +13,14 @@ BASE_API_URL = config['DEFAULT']['BASE_API_URL']
 AUTH0_DOMAIN = config['DEFAULT']['AUTH0_DOMAIN']
 AUTH0_CLIENT_ID = config['DEFAULT']['AUTH0_CLIENT_ID']
 
+
 def get_auth0_token(username, password):
     url = f'https://{AUTH0_DOMAIN}/oauth/token'
-    headers = {'content-type': 'application/json'}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        "Referer": "https://app.moneyfarm.com/it/sign-in",
+        "Content-Type": "application/json"
+    }
     data = {
         'grant_type': 'password',
         'client_id': AUTH0_CLIENT_ID,
