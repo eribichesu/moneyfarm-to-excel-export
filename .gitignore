@@ -2,3 +2,4 @@
 *.xlsx
 config.properties
 /.vscode
+export/.DS_Store
